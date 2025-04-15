@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mielilusiones</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='img/icono1.png') }}">
+</head>
+<body style="background-image: url('{{ url_for('static', filename='fondo.jpg') }}'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;">
+
+    <!-- Botón hamburguesa (siempre visible) -->
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+    <!-- Menú lateral desplegable -->
+    <nav class="side-menu" id="sideMenu">
+        <ul>
+            <li><a href="/categoria/kits">Kits digitales</a></li>
+            <li><a href="/categoria/bolsitas">Bolsitas golosineras</a></li>
+            <li><a href="/categoria/banderines">Banderines</a></li>
+            <li><a href="/categoria/invitaciones">Invitaciones digitales</a></li>
+            <li><a href="/categoria/stickers">Stickers</a></li>
+            <li><a href="/categoria/combos">Combos digitales</a></li>
+            <li><a href="/categoria/cursos">Cursos</a></li>
+        </ul>
+    </nav>
+
+    <!-- Encabezado principal -->
+    <header class="encabezado">
+        <div class="portada">
+            <img src="{{ url_for('static', filename='img/abejita.png') }}" alt="Logo" class="logo">
+            <h1>Mielilusiones</h1>
+            <p class="subtitulo">¡Decorá con magia tus momentos!</p>
+        </div>
+        <nav class="menu-principal">
+            <a href="{{ url_for('inicio') }}">Inicio</a>
+            <a href="{{ url_for('catalogo') }}">Catálogo</a>
+            <a href="{{ url_for('agregar_producto') }}">Agregar Producto</a>
+            <a href="https://wa.me/123456789" target="_blank">WhatsApp</a>
+            <a href="https://instagram.com/mielilusiones" target="_blank">Instagram</a>
+        </nav>
+    </header>
+
+    <!-- Contenido dinámico -->
+    <main class="contenido">
+        {% block contenido %}{% endblock %}
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="pie">
+        <p>©️ 2025 Mielilusiones | Todos los derechos reservados</p>
+    </footer>
+
+    <!-- Script para mostrar/ocultar el menú lateral -->
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('sideMenu');
+            menu.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>

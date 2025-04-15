@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+<h2>{{ categoria | capitalize }}</h2>
+<div class="catalogo">
+  {% if productos %}
+    {% for producto in productos %}
+      <div class="producto">
+        <h3>{{ producto.nombre }}</h3>
+        {% if producto.imagen %}
+          <img src="{{ url_for('static', filename='img/' ~ producto.imagen) }}" alt="{{ producto.nombre }}" style="width: 100%;">
+        {% endif %}
+        <p><strong>Precio:</strong> ${{ producto.precio }}</p>
+        <p>{{ producto.descripcion }}</p>
+      </div>
+    {% endfor %}
+  {% else %}
+    <p>No hay productos en esta categoría aún.</p>
+  {% endif %}
+</div>
+{% endblock %}

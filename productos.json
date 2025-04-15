@@ -1,0 +1,18 @@
+[
+    {
+        "id": 1,
+        "nombre": "Kit cumpleaños",
+        "imagen": "kit_cumpleaños.jpg",
+        "precio": 500,
+        "descripcion": "Un kit completo para cumpleaños con globos y decoraciones.",
+        "categoria": "kits"
+    },
+    {
+        "id": 2,
+        "nombre": "Invitación digital",
+        "imagen": "invitacion_digital.jpg",
+        "precio": 100,
+        "descripcion": "Invitación digital personalizada para tu evento.",
+        "categoria": "invitaciones"
+    }
+]

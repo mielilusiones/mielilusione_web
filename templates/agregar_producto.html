@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+<h2>Agregar nuevo producto</h2>
+<form method="post">
+    <label for="nombre">Nombre:</label>
+    <input type="text" name="nombre" id="nombre" required>
+
+    <label for="imagen">Nombre de la imagen (ej: producto1.jpg):</label>
+    <input type="text" name="imagen" id="imagen" required>
+
+    <label for="precio">Precio:</label>
+    <input type="text" name="precio" id="precio" required>
+
+    <label for="descripcion">Descripción:</label>
+    <textarea name="descripcion" id="descripcion" rows="4" required></textarea>
+
+    <label for="categoria">Categoría:</label>
+    <select name="categoria" id="categoria" required>
+        <option value="">Seleccionar</option>
+        <option value="kits">Kits digitales</option>
+        <option value="bolsitas">Bolsitas golosineras</option>
+        <option value="banderines">Banderines</option>
+        <option value="invitaciones">Invitaciones digitales</option>
+        <option value="stickers">Stickers</option>
+        <option value="combos">Combos digitales</option>
+        <option value="cursos">Cursos</option>
+    </select>
+
+    <button type="submit">Agregar</button>
+</form>
+{% endblock %}

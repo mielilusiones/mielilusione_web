@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap');
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    margin: 0;
+    background: #fff0f5;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centramos todo el contenido */
+}
+
+header {
+    background-color: #ffe4ec;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #f8a5c2;
+    width: 100%; /* Asegura que el header ocupe todo el ancho */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3em;
+    color: #d63384;
+}
+
+.subtitulo {
+    font-size: 1.3em;
+    color: #555;
+    margin-top: 10px;
+}
+
+/* Logo */
+.logo {
+    width: 200px;
+    height: auto;
+    margin-top: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto; /* Centra el logo */
+}
+
+/* Navegación principal */
+nav {
+    margin-top: 15px;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #d63384;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: #800080;
+}
+
+/* Contenido principal */
+main {
+    padding: 20px;
+}
+
+/* Portada */
+.portada {
+    text-align: center;
+    padding: 50px 20px 30px;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 20px;
+    border-radius: 15px;
+    width: 100%; /* Asegura que la portada ocupe todo el ancho */
+}
+
+.portada h1 {
+    font-size: 3em;
+    color: #e26ea6;
+    margin: 10px 0;
+}
+
+.portada p {
+    color: #444;
+}
+
+/* Menú hamburguesa */
+.menu-toggle {
+    display: block;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 35px;
+    cursor: pointer;
+    z-index: 1000;
+    color: #e26ea6;
+    background: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.2);
+}
+
+.menu-toggle:hover {
+    background-color: #e26ea6;
+    color: #fff;
+}
+
+/* Menú lateral */
+.side-menu {
+    position: fixed;
+    left: -250px;
+    top: 0;
+    height: 100%;
+    width: 250px;
+    background-color: #fff3f8;
+    padding-top: 60px;
+    transition: left 0.3s ease;
+    z-index: 999;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+}
+
+.side-menu.show {
+    left: 0;
+}
+
+.side-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.side-menu li {
+    padding: 20px;
+    border-bottom: 1px solid #ffd6e7;
+}
+
+.side-menu a {
+    text-decoration: none;
+    color: #e26ea6;
+    font-weight: bold;
+    font-size: 1.1em;
+    display: block;
+}
+
+/* Pie de página */
+footer {
+    text-align: center;
+    background: #ffe4ec;
+    padding: 15px;
+    margin-top: 40px;
+    color: #555;
+    font-size: 0.9em;
+    border-top: 1px solid #f8a5c2;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    nav a {
+        display: block;
+        margin: 5px 0;
+    }
+
+    .catalogo {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .producto {
+        width: 90%;
+    }
+
+    .portada h1 {
+        font-size: 2.2em;
+    }
+
+    header h1 {
+        font-size: 2em; /* Ajusta el tamaño de la cabecera en pantallas pequeñas */
+    }
+}

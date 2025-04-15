@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block contenido %}
+
+<h2>Bienvenidos a Mielilusiones</h2>
+<p>Kits personalizados, invitaciones, combos completos y mucho más.</p>
+
+<!-- Productos destacados -->
+<section>
+    <h3>Productos destacados</h3>
+    <div class="catalogo">
+        {% for producto in destacados %}
+        <div class="producto">
+            <h4>{{ producto.nombre }}</h4>
+            {% if producto.imagen %}
+            <img src="{{ url_for('static', filename='img/' ~ producto.imagen) }}" alt="{{ producto.nombre }}" style="width: 100%;">
+            {% endif %}
+            <p><strong>Precio:</strong> ${{ producto.precio }}</p>
+            <p>{{ producto.descripcion[:50] | safe }}...</p>
+            <a href="{{ url_for('producto_detalle', producto_id=loop.index0) }}">Ver más</a>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- Ofertas -->
+<section style="margin-top: 40px;">
+    <h3>Ofertas</h3>
+    {% if ofertas %}
+    <div class="catalogo">
+        {% for producto in ofertas %}
+        <div class="producto">
+            <h4>{{ producto.nombre }}</h4>
+            {% if producto.imagen %}
+            <img src="{{ url_for('static', filename='img/' ~ producto.imagen) }}" alt="{{ producto.nombre }}" style="width: 100%;">
+            {% endif %}
+            <p><strong>Precio:</strong> ${{ producto.precio }}</p>
+            <p>{{ producto.descripcion[:50] }}...</p>
+            <a href="{{ url_for('producto_detalle', producto_id=producto.id) }}">Ver más</a>
+        </div>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p>¡Pronto vas a encontrar productos con descuentos especiales!</p>
+    {% endif %}
+</section>
+
+<!-- Instagram -->
+<section style="text-align: center; margin-top: 40px;">
+    <h3>Seguinos en Instagram</h3>
+    <p><a href="https://instagram.com/mielilusiones" target="_blank">@mielilusiones</a></p>
+</section>
+
+{% endblock %}
